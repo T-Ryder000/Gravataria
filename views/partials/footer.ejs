@@ -1,0 +1,49 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+  AOS.init();
+  
+  const modal = document.getElementById('modal');
+  const openModalButtons = document.querySelectorAll('.openModal');
+  const closeModalButton = document.querySelector('.close');
+  
+  // Função para abrir o modal
+  const openModal = () => {
+    modal.classList.remove('hidden'); // Torna o modal visível
+    setTimeout(() => {
+      modal.classList.add('show'); // Adiciona a animação
+    }, 10); // Delay para ativar a transição
+  };
+  
+  // Função para fechar o modal
+  const closeModal = () => {
+    modal.classList.remove('show'); // Remove a animação
+    setTimeout(() => {
+      modal.classList.add('hidden'); // Esconde o modal após a animação
+    }, 300); // Tempo da transição
+  };
+  
+  // Evento de clique para abrir o modal
+  openModalButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+  });
+  
+  // Evento de clique para fechar o modal
+  closeModalButton.addEventListener('click', closeModal);
+  
+  // Fecha o modal ao clicar fora do conteúdo
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  
+  function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Rolagem suave até o topo
+      });
+  }
+  </script>
+</html>

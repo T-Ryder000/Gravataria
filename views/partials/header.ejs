@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/output.css" rel="stylesheet">
+  <title>Gravataria King</title>
+  <link rel="icon" href="/images/logo.PNG">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    .nav_list {
+      gap: 2em;
+    }
+    .nav_list > li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .nav-link {
+      color: white;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #F50A2A;
+      transition: all 0.3s;
+    }
+  
+    /* Efeito de linha abaixo do texto com hover */
+    .texto-com-hover {
+      position: relative;
+      display: inline-block;
+    }
+    .texto-com-hover .linha {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #F50A2A;
+      transition: width 0.3s ease;
+    }
+    .texto-com-hover:hover .linha {
+      width: 100%;
+    }
+  
+   /* modal */
+   /* Estado inicial (modal oculto) */
+    .hidden {
+      display: none;
+    }
+    .modal .modal-content {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    /* Estado visível com animação */
+    .modal.show .modal-content {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+</head>

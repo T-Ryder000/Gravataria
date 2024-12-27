@@ -1,0 +1,66 @@
+<%- include ( '../../partials/header.ejs' ) %>
+
+<body class="bg-gray-100 flex  justify-center items-center" style="height: 100vh;">
+  <div class="max-w-[500px] p-3 bg-gray-900  rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center text-white mb-6">Criar Produto</h1>
+    <form action="/products/save" method="POST" class="space-y-6" enctype="multipart/form-data">
+
+      <div class="text-white flex flex-col">
+        <label for="product-image" class="form-label mt-1 font-medium">Imagem</label>
+        <input id="upload_image" class="upload_image" type="file" name="image" style="display: none">
+        <div class="flex items-center gap-5">
+          <button id="upload_button" class="custom_upload_button p-2 bg-red-700 rounded mt-2" style="max-width: 150px;">Escolher Arquivo</button>
+          <span id="file_name" class="file_name text-center"><small>Nenhum arquivo escolhido</small></span>
+        </div>
+      </div>
+      <br>
+      <!-- Nome do Produto -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-white">Nome do Produto</label>
+        <input type="text" id="name" name="name" required 
+               class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700">
+      </div>
+
+      <!-- Descrição -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-white">Descrição</label>
+        <textarea id="description" name="description" rows="4" required 
+                  class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700"></textarea>
+      </div>
+
+      <!-- Preço -->
+      <div>
+        <label for="price" class="block text-sm font-medium text-white">Preço</label>
+        <input type="number" id="price" name="price" required step="0.01" 
+               class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700">
+      </div>
+
+      <br>
+      <!-- Botão de Enviar -->
+      <div>
+        <button class="w-full bg-red-700 text-white font-bold px-4 py-3 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-gray-900">
+          Criar Produto
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+
+
+<%- include ( '../../partials/footer.ejs' ) %>
+
+
+<script>
+  //button de upload de imagens
+  document.getElementById('upload_button').addEventListener('click', function(e) {
+  document.getElementById('upload_image').click();
+
+  e.preventDefault()
+});
+
+document.getElementById('upload_image').addEventListener('change', function() {
+  var fileName = this.files.length > 0 ? this.files[0].name : 'Nenhum arquivo escolhido';
+  document.getElementById('file_name').textContent = fileName;
+});
+
+</script>

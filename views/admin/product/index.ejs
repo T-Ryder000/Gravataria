@@ -1,0 +1,55 @@
+<%- include ( '../../partials/header.ejs' ) %>
+
+<body class="bg-gray-100">
+
+  <header class="bg-gray-900 w-full text-center flex items-center justify-center" style="min-height: 50px;">
+    <nav>
+      <ul>
+        <li class="text-2xl text-white"><a href="/"><i class="fa-solid fa-circle-left text-red-700"></i> Retornar</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="max-w-5xl mx-auto p-6" style="max-width: 1100px;">
+    <!-- Título -->
+     <br>
+     <br>
+    <h1 class="text-3xl font-bold text-center my-8 ">Gerenciador de produtos</h1>
+    <br>
+    <br>
+
+    <a href="/admin/products/new" class="py-3 px-5 w-100 rounded font-bold text-white" style="background-color: green;">Criar produto <i class="fa-solid fa-plus"></i></a>
+
+    <br>
+    <br>
+
+    <br>
+    <!-- Lista de Produtos -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+      <!-- Produto Exemplo -->
+      <% products.forEach(product => {%>
+
+        <div class="rounded-lg p-4 bg-gray-900 text-white max-h-[400px] sm:max-w-[250px]" data-aos="fade-up">
+          <img src="/<%= product.image %>" alt="Produto 1" class="mx-auto mb-4 rounded-lg sm:max-h-[300px]">
+          <div class="truncate-container" style="width: 200px;"> <!-- Adiciona uma div contêiner -->
+            <h3 class="text-lg font-semibold truncate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= product.name %></h3>
+          </div>
+          <p class="font-bold text-2xl"><%= product.price.toFixed(2) %></p>
+          <br>
+          <div class="flex justify-between">
+            <a href="/admin/products/edit/<%= product.id %>" class="py-3 px-5 w-100 rounded font-bold text-black" style="background-color: rgb(255, 153, 19);">Editar</a>
+            <form action="/products/delete" method="post" class="inline">
+              <input type="hidden" name="id" value="<%= product.id %>">
+              <button class="bg-red-700 py-3 px-5 w-100 rounded font-bold text-white">Excluir</button>
+            </form>
+          </div>
+        </div>
+        
+
+      <% }) %>
+
+    </div>
+  </div>
+</body>
+
+
+<%- include ( '../../partials/footer.ejs' ) %>
