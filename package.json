@@ -106,9 +106,10 @@
     "wrap-ansi-cjs": "^7.0.0",
     "yaml": "^2.6.1"
   },
-  "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
-  },
+"scripts": {
+  "dev": "npx tailwindcss -i ./public/input.css -o ./public/output.css --watch", 
+  "build": "npx tailwindcss -i ./public/input.css -o ./public/output.css"
+},
   "author": "",
   "license": "ISC",
   "description": ""
