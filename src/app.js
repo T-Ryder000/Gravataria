@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static
-app.use(express.static('public'));
+app.use(express.static('src/public'));
 app.use(express.static('upload'));
 
 // Firebase não requer autenticação de conexão explícita
