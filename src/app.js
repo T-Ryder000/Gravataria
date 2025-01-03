@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -5,6 +6,9 @@ const multer = require('multer'); // Upload de imagens
 const productsController = require('./products/productsController');
 const Product = require('./products/Product'); // Adaptado para usar Firebase
 
+
+// Configurar o diretório 'views' para a pasta dentro de 'src'
+app.set('views', path.join(__dirname, 'views'));
 // View engine
 app.set('view engine', 'ejs');
 
