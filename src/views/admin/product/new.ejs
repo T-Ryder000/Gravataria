@@ -1,7 +1,8 @@
-<%- include ( '../../partials/header.ejs' ) %>
+<%- include('../../partials/header.ejs') %>
 
-<body class="bg-gray-100 flex  justify-center items-center" style="height: 100vh;">
-  <div class="max-w-[500px] p-3 bg-gray-900  rounded-lg shadow-lg">
+
+<body class="bg-gray-100 flex  justify-center items-center h-full p-3" style="height: 100vh;">
+  <div class="max-w-[500px] w-full p-3 bg-gray-900  rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold text-center text-white mb-6">Criar Produto</h1>
     <form action="/products/save" method="POST" class="space-y-6" enctype="multipart/form-data">
 
@@ -13,29 +14,27 @@
           <span id="file_name" class="file_name text-center"><small>Nenhum arquivo escolhido</small></span>
         </div>
       </div>
-      <br>
+
       <!-- Nome do Produto -->
-      <div>
-        <label for="name" class="block text-sm font-medium text-white">Nome do Produto</label>
+      <div class="text-white">
+        <label for="name" class="block text-sm font-medium ">Nome do Produto</label>
         <input type="text" id="name" name="name" required 
                class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700">
       </div>
 
-      <!-- Descrição -->
-      <div>
-        <label for="description" class="block text-sm font-medium text-white">Descrição</label>
-        <textarea id="description" name="description" rows="4" required 
-                  class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700"></textarea>
-      </div>
-
       <!-- Preço -->
-      <div>
-        <label for="price" class="block text-sm font-medium text-white">Preço</label>
+      <div class="flex items-center gap-5 text-white">
+        <label for="price" class="block text-sm font-medium ">Preço</label>
         <input type="number" id="price" name="price" required step="0.01" 
-               class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700">
+                class="mt-2 block w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700">
+      </div>
+      <!-- Descrição -->
+      <div class="text-white">
+        <label for="description" class="block text-sm font-medium ">Descrição</label>
+        <textarea id="description" name="description" rows="4" required 
+                  class="mt-2 block w-full px-4  bg-gray-800 border border-gray-700 rounded-lg placeholder-gray-400 focus:ring-red-700 focus:border-red-700"></textarea>
       </div>
 
-      <br>
       <!-- Botão de Enviar -->
       <div>
         <button class="w-full bg-red-700 text-white font-bold px-4 py-3 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-gray-900">
@@ -47,7 +46,8 @@
 </body>
 
 
-<%- include ( '../../partials/footer.ejs' ) %>
+<%- include('../../partials/footer.ejs') %>
+
 
 
 <script>

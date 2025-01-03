@@ -18,8 +18,8 @@ app.use(bodyParser.json());
 
 // Static
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'upload')));
 
-app.use(express.static('upload'));
 
 // Firebase não requer autenticação de conexão explícita
 console.log('Conexão com o Firebase configurada com sucesso!');
