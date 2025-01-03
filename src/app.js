@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const multer = require('multer'); // Upload de imagens
-const productsController = require('../products/productsController');
-const Product = require('../products/Product'); // Adaptado para usar Firebase
+const productsController = require('./products/productsController');
+const Product = require('./products/Product'); // Adaptado para usar Firebase
 
 // View engine
 app.set('view engine', 'ejs');
