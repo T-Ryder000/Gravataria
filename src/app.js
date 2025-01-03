@@ -23,7 +23,9 @@ console.log('Conexão com o Firebase configurada com sucesso!');
 app.use('/', productsController);
 
 app.get("/", async (req, res) => {
+  console.log('Acessando a página inicial...');
   const products = await Product.getAll(); // Adaptado para buscar dados do Firebase
+  console.log('Produtos encontrados:', products);
   res.render('index', { products });
 });
 
