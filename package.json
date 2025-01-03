@@ -107,9 +107,11 @@
     "yaml": "^2.6.1"
   },
 "scripts": {
-  "dev": "npx tailwindcss -i ./public/input.css -o ./public/output.css --watch", 
-  "build": "npx tailwindcss -i ./public/input.css -o ./public/output.css"
-},
+  "dev": "nodemon src/app.js",
+  "build": "npx tailwindcss -i ./src/input.css -o ./public/output.css",
+  "start": "node src/app.js"
+}
+,
   "author": "",
   "license": "ISC",
   "description": ""
