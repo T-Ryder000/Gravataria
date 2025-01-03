@@ -109,7 +109,7 @@
   },
   "scripts": {
     "dev": "nodemon src/app.js",
-    "build": "tailwindcss -i src/input.css -o public/output.css --minify",
+    "build": "tailwindcss -i src/input.css -o src/public/output.css --minify",
     "start": "node src/app.js"
   },
   "author": "",
