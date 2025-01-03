@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js}", // Outros arquivos do diretório src, se houver
-    "./views/**/*.ejs"      // Adicione os arquivos EJS da pasta views
+    './public/**/*.html',
+    './src/**/*.js', // ou onde os arquivos JS estão localizados
+    './views/**/*.ejs', // ou onde seus arquivos EJS estão localizados
   ],
   theme: {
     extend: {},
